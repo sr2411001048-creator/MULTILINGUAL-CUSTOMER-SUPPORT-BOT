@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>DukaanSathi - Kirana Chatbot</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="header-top">
+        <div class="shop-branding">
+          <div class="shop-icon" id="shopIcon">🏪</div>
+          <div class="shop-title-area">
+            <h1 id="shopName">DukaanSathi</h1>
+            <div class="shop-status">
+              <span class="status-dot"></span>
+              <span id="shopStatusText">Open Today</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <!-- Language dropdown -->
+          <div class="lang-select-wrapper" title="Choose your preferred language">
+            <span style="font-size: 13px; margin-right: 2px;">🌐</span>
+            <select id="languageSelect">
+              <option value="hi-IN" selected>Hindi (हिंदी)</option>
+              <option value="bn-IN">Bengali (বাংলা)</option>
+              <option value="ta-IN">Tamil (தமிழ்)</option>
+              <option value="te-IN">Telugu (తెలుగు)</option>
+              <option value="mr-IN">Marathi (मराठी)</option>
+              <option value="gu-IN">Gujarati (ગુજરાતી)</option>
+              <option value="kn-IN">Kannada (ಕನ್ನಡ)</option>
+              <option value="ml-IN">Malayalam (മലയാളം)</option>
+              <option value="pa-IN">Punjabi (ਪੰਜਾਬੀ)</option>
+              <option value="od-IN">Odia (ଓଡ଼ିଆ)</option>
+              <option value="en-IN">English</option>
+            </select>
+          </div>
+
+          <a href="/admin" class="admin-link-btn" title="Shop Owner Admin Panel">Owner ⚙️</a>
+        </div>
+      </div>
+
+      <!-- Shop sub-info: timings & address -->
+      <div class="shop-subinfo">
+        <span id="shopTimings">⏰ 7:00 AM - 10:00 PM</span>
+        <span id="shopAddress">📍 Gandhi Chowk</span>
+      </div>
+    </header>
+
+    <!-- Chat Messages Box -->
+    <main class="chat-messages" id="chatMessages">
+      
+      <!-- Quick Query Suggestions Chips -->
+      <div class="quick-chips-container" id="quickChips">
+        <button class="chip-btn" data-query="दुकान कब खुलती है और कब बंद होती है?">⏰ दुकान का समय?</button>
+        <button class="chip-btn" data-query="क्या आप होम डिलीवरी करते हैं? शर्तें क्या हैं?">🛵 होम डिलीवरी?</button>
+        <button class="chip-btn" data-query="आशीर्वाद आटा और तेल का भाव क्या है?">🌾 आटा और तेल का भाव?</button>
+        <button class="chip-btn" data-query="पेमेंट के कौन से तरीके उपलब्ध हैं?">💳 पेमेंट के तरीके?</button>
+      </div>
+
+      <!-- Welcome Message from DukaanSathi -->
+      <div class="message-row bot">
+        <div class="bubble">
+          <p id="welcomeText">
+            नमस्ते! 🙏 मैं <strong>दुकान साथी</strong> हूँ। आप अपनी भाषा में बोलकर या लिखकर दुकान के सामान, भाव (Prices), समय या होम डिलीवरी के बारे में कुछ भी पूछ सकते हैं।
+          </p>
+          <div class="bubble-actions">
+            <button class="listen-btn" onclick="playBotSpeech(this, document.getElementById('welcomeText').innerText)">
+              🔊 Listen
+            </button>
+          </div>
+          <div class="message-time" id="welcomeTime">Just now</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Voice Recording Overlay -->
+    <div class="voice-recording-overlay" id="recordingOverlay">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="recording-pulse"></span>
+        <span id="recordingStatusText">Recording voice... Speak now</span>
+      </div>
+      <button class="stop-record-btn" id="stopRecordBtn">Done & Send</button>
+    </div>
+
+    <!-- Chat Input Form -->
+    <footer class="chat-input-bar">
+      <!-- Voice Mic Button -->
+      <button type="button" class="action-btn mic-btn" id="micBtn" title="Hold or click to speak in your language">
+        🎙️
+      </button>
+
+      <!-- Text Input Field -->
+      <div class="input-field-wrapper">
+        <input 
+          type="text" 
+          id="chatInput" 
+          class="chat-input" 
+          placeholder="Type or speak your question..." 
+          autocomplete="off"
+        >
+      </div>
+
+      <!-- Send Button -->
+      <button type="button" class="action-btn send-btn" id="sendBtn" title="Send Question">
+        ➤
+      </button>
+    </footer>
+  </div>
+
+  <!-- Audio Player (hidden) -->
+  <audio id="audioPlayer" style="display:none;"></audio>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="/static/js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{
+  "shop_info": {
+    "name": "Shree Ganesh Kirana & General Store",
+    "owner_name": "Ramesh Sharma",
+    "phone": "+919876543210",
+    "whatsapp": "+919876543210",
+    "address": "Shop No. 4, Main Market, Gandhi Chowk, Lucknow, UP - 226016",
+    "landmark": "Opposite Civil Hospital, Near Hanuman Mandir (Verified)",
+    "timings": "Monday to Sunday: 7:00 AM to 10:00 PM (Open all 7 days)",
+    "payment_methods": "Cash, UPI (Google Pay, PhonePe, Paytm, BHIM), Debit/Credit Cards",
+    "delivery_info": "Free home delivery within 3 km on orders above ₹300. Delivery takes 45-60 minutes. For orders below ₹300, delivery charge is ₹20."
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Aashirvaad Shudh Chakki Atta",
+      "category": "Flour & Grains",
+      "price": 240,
+      "unit": "5 kg",
+      "in_stock": true
+    },
+    {
+      "id": 2,
+      "name": "Fortune Sunlite Refined Sunflower Oil",
+      "category": "Oils & Ghee",
+      "price": 145,
+      "unit": "1 Litre",
+      "in_stock": true
+    },
+    {
+      "id": 3,
+      "name": "Amul Taaza Toned Milk",
+      "category": "Dairy",
+      "price": 27,
+      "unit": "500 ml",
+      "in_stock": true
+    },
+    {
+      "id": 4,
+      "name": "Amul Butter",
+      "category": "Dairy",
+      "price": 58,
+      "unit": "100 g",
+      "in_stock": true
+    },
+    {
+      "id": 5,
+      "name": "Tata Salt Vacuum Evaporated",
+      "category": "Spices & Salt",
+      "price": 28,
+      "unit": "1 kg",
+      "in_stock": true
+    },
+    {
+      "id": 6,
+      "name": "India Gate Basmati Rice Feast Rozzana",
+      "category": "Flour & Grains",
+      "price": 95,
+      "unit": "1 kg",
+      "in_stock": true
+    },
+    {
+      "id": 7,
+      "name": "Tata Tea Premium",
+      "category": "Beverages",
+      "price": 140,
+      "unit": "250 g",
+      "in_stock": true
+    },
+    {
+      "id": 8,
+      "name": "Bru Instant Coffee",
+      "category": "Beverages",
+      "price": 95,
+      "unit": "50 g",
+      "in_stock": true
+    },
+    {
+      "id": 9,
+      "name": "Toor Dal (Arhar Dal) Premium",
+      "category": "Pulses",
+      "price": 160,
+      "unit": "1 kg",
+      "in_stock": true
+    },
+    {
+      "id": 10,
+      "name": "Moong Dal Dhuli",
+      "category": "Pulses",
+      "price": 120,
+      "unit": "1 kg",
+      "in_stock": true
+    },
+    {
+      "id": 11,
+      "name": "Sugar (Refined)",
+      "category": "Staples",
+      "price": 44,
+      "unit": "1 kg",
+      "in_stock": true
+    },
+    {
+      "id": 12,
+      "name": "Maggi 2-Minute Masala Noodles",
+      "category": "Snacks",
+      "price": 14,
+      "unit": "70 g pack",
+      "in_stock": true
+    },
+    {
+      "id": 13,
+      "name": "Dettol Original Soap",
+      "category": "Personal Care",
+      "price": 40,
+      "unit": "75 g (Pack of 1)",
+      "in_stock": true
+    },
+    {
+      "id": 14,
+      "name": "Colgate Strong Teeth Toothpaste",
+      "category": "Personal Care",
+      "price": 62,
+      "unit": "100 g",
+      "in_stock": true
+    },
+    {
+      "id": 15,
+      "name": "Surf Excel Quick Wash Detergent Powder",
+      "category": "Household",
+      "price": 150,
+      "unit": "1 kg",
+      "in_stock": true
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you deliver to home?",
+      "answer": "Yes, we provide home delivery within 3 km. Free for orders above ₹300, and ₹20 fee for orders under ₹300."
+    },
+    {
+      "question": "What are your store hours?",
+      "answer": "We are open every day from 7:00 AM to 10:00 PM without any afternoon break."
+    },
+    {
+      "question": "What payment methods are accepted?",
+      "answer": "We accept Cash, UPI (Google Pay, PhonePe, Paytm, BHIM), and Debit/Credit Cards."
+    },
+    {
+      "question": "Can I return or exchange an item?",
+      "answer": "Yes, damaged or defective items can be returned or exchanged within 24 hours with the purchase bill."
+    },
+    {
+      "question": "Do you offer credit or monthly khata?",
+      "answer": "We currently do not offer credit or khata. All purchases must be paid by cash or digital payment at the time of purchase or delivery."
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DukaanSathi - Shop Owner Admin</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="admin-body">
+
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="admin-title">
+      <span>🏪</span>
+      <span>DukaanSathi Admin Panel</span>
+    </div>
+    <div class="admin-header-actions">
+      <a href="/" class="admin-nav-btn" target="_blank">View Chat Page ↗</a>
+      <button id="logoutBtn" class="admin-nav-btn" style="display:none;">Logout</button>
+    </div>
+  </header>
+
+  <!-- Login Card (Displayed when not authenticated) -->
+  <div id="loginSection" class="login-card">
+    <h2>Shop Owner Login</h2>
+    <p>Please enter your store admin password to manage shop data and view customer queries.</p>
+    <form id="loginForm">
+      <div class="form-group">
+        <label class="form-label" for="adminPasswordInput">Admin Password</label>
+        <input 
+          type="password" 
+          id="adminPasswordInput" 
+          class="form-control" 
+          placeholder="Enter password (default: admin123)" 
+          required 
+          autocomplete="current-password"
+        >
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%;">
+        Log In
+      </button>
+    </form>
+    <div id="loginError" style="color: #ef4444; font-size: 13px; margin-top: 10px; display: none;"></div>
+  </div>
+
+  <!-- Dashboard Container (Displayed when authenticated) -->
+  <div id="dashboardSection" class="admin-container" style="display: none;">
+    
+    <!-- Tab Navigation -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-shop">🏪 Shop Details</button>
+      <button class="tab-btn" data-tab="tab-products">📦 Products & Prices</button>
+      <button class="tab-btn" data-tab="tab-faqs">❓ FAQs & Policies</button>
+      <button class="tab-btn" data-tab="tab-conversations">💬 Customer Questions</button>
+    </div>
+
+    <!-- TAB 1: Shop Details -->
+    <div id="tab-shop" class="tab-content active">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3>Basic Shop Information & Timings</h3>
+          <button type="button" class="btn-primary" onclick="saveAllShopData()">💾 Save Details</button>
+        </div>
+
+        <form id="shopDetailsForm">
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label">Shop Name</label>
+              <input type="text" id="shopNameInput" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Owner Name</label>
+              <input type="text" id="ownerNameInput" class="form-control">
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label">Contact Phone (for Calls)</label>
+              <input type="tel" id="shopPhoneInput" class="form-control" placeholder="+919876543210" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">WhatsApp Number</label>
+              <input type="tel" id="shopWhatsappInput" class="form-control" placeholder="+919876543210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Shop Address</label>
+            <input type="text" id="shopAddressInput" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Landmark</label>
+            <input type="text" id="shopLandmarkInput" class="form-control" placeholder="Near Temple / Opposite Bank">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Opening & Closing Timings</label>
+            <input type="text" id="shopTimingsInput" class="form-control" placeholder="7:00 AM to 10:00 PM (Everyday)" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Accepted Payment Methods</label>
+            <input type="text" id="shopPaymentInput" class="form-control" placeholder="Cash, UPI (Google Pay, PhonePe), Debit/Credit Cards">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Delivery Policy & Rules</label>
+            <textarea id="shopDeliveryInput" class="form-control" rows="3" placeholder="Free delivery over ₹300 within 3km..."></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB 2: Products & Prices -->
+    <div id="tab-products" class="tab-content">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3>Product Catalog & Price List</h3>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn-secondary" onclick="openAddProductModal()">+ Add Product</button>
+            <button type="button" class="btn-primary" onclick="saveAllShopData()">💾 Save Products</button>
+          </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="item-table" id="productsTable">
+            <thead>
+              <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Price (₹)</th>
+                <th>Unit / Pack</th>
+                <th>Stock Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: FAQs -->
+    <div id="tab-faqs" class="tab-content">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3>Frequently Asked Questions (FAQs)</h3>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn-secondary" onclick="openAddFaqModal()">+ Add FAQ</button>
+            <button type="button" class="btn-primary" onclick="saveAllShopData()">💾 Save FAQs</button>
+          </div>
+        </div>
+
+        <div id="faqsListContainer">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: Customer Questions Log -->
+    <div id="tab-conversations" class="tab-content">
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h3>Customer Questions History (conversations.json)</h3>
+          <button type="button" class="btn-secondary" onclick="fetchConversations()">🔄 Refresh</button>
+        </div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+          Review inquiries asked by customers via text or voice. This helps you understand what stock or answers to add!
+        </p>
+
+        <div id="conversationsContainer">
+          <p style="text-align: center; color: var(--text-muted);">Loading conversations...</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="/static/js/admin.js"></script>
+</body>
+</html>

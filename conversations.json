@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-10-12 14:31:50",
+    "question": "Dukaan kab khulti hai?",
+    "answer": "Dukaan subah 7:00 baje se raat 10:00 baje tak khuli rehti hai.",
+    "language": "hi-IN",
+    "input_type": "text",
+    "contact_owner_suggested": false
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-10-12 14:47:20",
+    "question": "Dukaan kab khulti hai?",
+    "answer": "Dukaan subah 7:00 baje se raat 10:00 baje tak khuli rehti hai.",
+    "language": "hi-IN",
+    "input_type": "text",
+    "contact_owner_suggested": false
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-10-12 14:51:40",
+    "question": "hii want to take some food",
+    "answer": "নমস্কার! আমাদের দোকানে স্বাগতম। আমাদের কাছে মুদিখানার অনেক দরকারি জিনিস আছে। \n\nআপনি কী কী নিতে চান? যেমন:\n- আটা (Aashirvaad Shudh Chakki Atta, ₹240 / 5 kg)\n- তেল (Fortune Sunlite Sunflower Oil, ₹145 / 1 Litre)\n- দুধ (Amul Taaza Toned Milk, ₹27 / 500 ml)\n- ডাল (Toor Dal ₹160 / 1 kg, Moong Dal ₹120 / 1 kg)\n- চা/কফি (Tata Tea ₹140 / 250 g, Bru Coffee ₹95 / 50 g)\n- চিনি (₹44 / 1 kg)\n- ম্যাগি (₹14 / 70 g)\n\nআপনি কী কী নিতে চান বলুন, আমি আপনাকে সাহায্য করব। আর হ্যাঁ, আপনার যদি কোনো খাবার বা রান্নার সামগ্রী না থাকে, সেটাও আমাকে জানাতে পারেন।",
+    "language": "bn-IN",
+    "input_type": "text",
+    "contact_owner_suggested": false
+  }
+]
